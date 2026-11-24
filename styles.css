@@ -1,0 +1,290 @@
+/* ===== 1. Color variables ===== */
+:root {
+    --bg: #FBF9F4;          /* ivory background */
+    --card-bg: #FFFFFF;     /* white cards */
+    --border: #E7E4DA;      /* thin borders */
+    --text: #1F241A;        /* near-black text */
+    --text-light: #5C6450;  /* secondary text */
+    --accent: #4F6228;      /* deep olive */
+    --accent-soft: #E7EDDA; /* light olive - icon circles & tags */
+    --tag-text: #344119;    /* dark olive - tag text */
+}
+
+/* ===== 2. General ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    text-align: center;
+    line-height: 1.7;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-weight: 700;
+}
+
+section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-subtitle {
+    color: var(--text-light);
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+strong {
+    color: var(--accent);
+}
+
+/* ===== 3. Header ===== */
+.top-container {
+    padding: 90px 20px 20px;
+}
+
+.top-container h1 {
+    font-size: 3.2rem;
+    font-weight: 300;
+    margin: 0;
+    animation: fadeUp 1s ease-out;
+}
+
+.top-container .name {
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.top-container h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin: 10px 0 5px;
+    animation: fadeUp 1s ease-out 0.3s backwards;
+}
+
+.top-container h3 {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text-light);
+    animation: fadeUp 1s ease-out 0.6s backwards;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid var(--card-bg);
+    box-shadow: 0 0 0 1px var(--border);
+    margin-top: 30px;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== 4. Dotted separator /
+hr {
+    border: dotted var(--accent) 6px;
+    border-bottom: none;
+    width: 4%;
+    margin: 100px auto;
+}
+
+/* ===== 5. Cards ===== */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px 22px;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(31, 36, 26, 0.10);
+}
+
+.card h3 {
+    margin: 18px 0 4px;
+}
+
+.card-meta {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-top: 0;
+}
+
+/* Round icons - work cards */
+.card-img {
+    width: 90px;
+    height: 90px;
+    padding: 20px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: var(--accent-soft);
+}
+
+/* Hobby cards - narrower, so 4 fit in one row */
+.hobby-card {
+    width: 240px;
+    padding: 14px 14px 24px;
+}
+
+/* Hobby photos - rounded rectangles, full card width */
+.hobby-card .card-img {
+    width: 100%;
+    height: 190px;
+    padding: 0;
+    object-fit: cover;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+/* Running screenshot - show only the route map, hide the stats */
+img[alt="running and strength training"] {
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+/* Tags */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.tag {
+    background-color: var(--accent-soft);
+    color: var(--tag-text);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* ===== 6. Skills strip ===== */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 50px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 0;
+}
+
+.skills-list li {
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* olive dot between items (not after the last one) */
+.skills-list li:not(:last-child)::after {
+    content: "•";
+    color: var(--accent);
+    font-size: 1.6rem;
+    line-height: 0;
+    vertical-align: middle;
+    margin: 0 14px;
+
+}
+
+/* ===== 7. Contact ===== */
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 14px 38px;
+    border-radius: 30px;
+    margin-top: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: var(--tag-text);
+}
+
+/* ===== 8. Footer ===== */
+footer {
+    margin-top: 100px;
+    padding: 30px;
+    border-top: 1px solid var(--border);
+}
+
+.footer-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* ===== 9. Responsive - mobile ===== */
+@media (max-width: 600px) {
+    .top-container {
+        padding-top: 50px;
+    }
+
+    .top-container h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .card,
+    .hobby-card {
+        width: 100%;
+    }
+
+    hr {
+        width: 15%;
+        margin: 60px auto;
+    }
+}
